@@ -1,0 +1,27 @@
+﻿@model WebApp.Identity.Models.TwoFactor
+
+@{
+    ViewData["Title"] = "Two Factor Authentication";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <p>Please enter your code below</p>
+        <form asp-action="TwoFactor" method="post" class="form-horizontal">
+            <div class="input-group" style="margin-bottom: 20px;">
+                <label asp-for="Token">Token</label>
+                <input asp-for="Token" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Send Token</button>
+            <div asp-validation-summary="All"></div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-default">Back to List</a>
+</div>
+

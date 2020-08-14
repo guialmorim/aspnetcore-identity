@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "About the user";
+}
+<h2>@ViewData["Title"]</h2>
+
+
+
+
+<ul class="list-group">
+    @foreach (var claim in User.Claims)
+    {
+        <li class="list-group-item">
+            <code>
+                @claim.Type
+            </code>
+            @claim.Value
+        </li>
+    }
+</ul>
